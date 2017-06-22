@@ -130,4 +130,4 @@ for x in xs:
 # when players = {2, 3, 4, 5, 6, 7, 8, ...},
 # the game lasts {1, 3, 7, 15, 31, 63, 127, ...} rounds
 
-# in general, when there are N players, the game lasts (2^(N-1) - 1) rounds
+# in general, when there are N players, the game lasts (2^(N-1) - 1) rounds, on average
