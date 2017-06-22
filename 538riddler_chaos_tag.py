@@ -127,5 +127,7 @@ for x in xs:
 
 #RESULTS
 
-# the pattern is {0, 1, 3, 7, 15, 31, 63, 127, ...} 
+# when players = {2, 3, 4, 5, 6, 7, 8, ...},
+# the game lasts {1, 3, 7, 15, 31, 63, 127, ...} rounds
+
 # in general, when there are N players, the game lasts (2^(N-1) - 1) rounds
