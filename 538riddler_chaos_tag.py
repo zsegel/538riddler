@@ -45,7 +45,7 @@ class Field(object):
         self.tag_count += 1
         
         #copy the potential taggers and taggees into a list
-        potential_taggers_and_taggees = [p for in self.active_players]
+        potential_taggers_and_taggees = [p for p in self.active_players]
         
         #pick the tagger
         tagger = random.choice(potential_taggers_and_taggees)
