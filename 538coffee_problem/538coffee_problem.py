@@ -79,13 +79,6 @@ def simulate_many_games(workers, number_of_sims=20000):
     for i in range(number_of_sims):
         simulate_one_game(workers)
     
-    total_coffee_consumed = 0
-    total_pots_refilled = 0
-    
-    for w in workers:
-        total_coffee_consumed += w.coffee_consumed
-        total_pots_refilled += w.pots_refilled
-    
     #sort workers by coffee_consumed
     workers.sort(key=lambda w: w.coffee_consumed, reverse=True)
     
