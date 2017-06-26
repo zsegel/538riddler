@@ -188,6 +188,7 @@ ranked_pour_sizes3 = simulate_many_games(workers)
 
 workers1 = make_workers_normal(800, 0.5, 0.15)
 workers2 = make_workers_normal(200, 0.99999, 0)
+workers = workers1 + workers2
 ranked_pour_sizes4 = simulate_many_games(workers)
 #the players with pour sizes equal to 0.99999 take the top 200 spots.
 
