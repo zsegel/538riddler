@@ -196,8 +196,8 @@ ranked_pour_sizes4 = simulate_many_games(workers)
 
 #OBSERVATION FIVE
 
-# Even if only 5% of players try to take the whole pot, they still
-# perform better than most (or all) other players, especially if those
+# Even if only 5% of players try to take the whole pot, those players
+# perform better than most (or all) other players, especially if the
 # other players' average pour size is closer to 1 than to 0.
 
 
