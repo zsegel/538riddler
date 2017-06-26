@@ -38,7 +38,7 @@
 import random
 import numpy as np
 import matplotlib.pyplot as plt
-%matplotlib inline #I did all this in an iPython notebook...
+%matplotlib inline #this command only works in iPython notebooks
 
 
 
