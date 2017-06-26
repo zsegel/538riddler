@@ -51,7 +51,7 @@ class Worker(object):
         self.pots_refilled = 0
 
     def get_coffee(self, coffee_pot):
-        if self.pour_size <= coffee_pot:
+        if self.pour_size < coffee_pot:
             self.coffee_consumed += self.pour_size
             coffee_pot -= self.pour_size
             return coffee_pot
@@ -152,7 +152,7 @@ workers1 = make_workers_normal(333, 0.3, 0.05)
 workers2 = make_workers_normal(333, 0.6, 0.05)
 workers3 = make_workers_normal(333, 0.9, 0.03)
 workers = workers1 + workers2 + workers3
-workers.append(Worker(1.0)) #this worker wins pretty much every time
+workers.append(Worker(0.99999)) #this worker wins pretty much every time
 
 ranked_pour_sizes2 = simulate_many_games(workers)
 
@@ -171,7 +171,7 @@ ranked_pour_sizes2 = simulate_many_games(workers)
 
 workers1 = make_workers_normal(750, 0.25, 0.1)
 workers2 = make_workers_normal(245, 0.45, 0.1)
-workers3 = make_workers_normal(5, 1, 0)
+workers3 = make_workers_normal(5, 0.99999, 0)
 workers = workers1 + workers2 + workers3
 
 ranked_pour_sizes3 = simulate_many_games(workers)
@@ -187,9 +187,9 @@ ranked_pour_sizes3 = simulate_many_games(workers)
 # mean 0.5, and one-fifth of workers go for the pot every time.
 
 workers1 = make_workers_normal(800, 0.5, 0.15)
-workers2 = make_workers_normal(200, 1, 0)
+workers2 = make_workers_normal(200, 0.99999, 0)
 ranked_pour_sizes4 = simulate_many_games(workers)
-#the whole-gallon players take the top 200 spots.
+#the players with pour sizes equal to 0.99999 take the top 200 spots.
 
 
 
@@ -202,21 +202,21 @@ ranked_pour_sizes4 = simulate_many_games(workers)
 
 
 workers1 = make_workers_normal(950, 0.9, 0.03) #950 workers' pours are clustered around 0.9
-workers2 = make_workers_normal(50, 1, 0) #50 workers go for the whole pot
+workers2 = make_workers_normal(50, 0.99999, 0) #50 workers go for nearly the whole pot
 workers = workers1 + workers2
 ranked_pour_sizes5a = simulate_many_games(workers)
 # all the ones who take the whole pot perform better than all others
 
 
 workers1 = make_workers_normal(950, 0.7, 0.1) #950 workers' pours are clustered around 0.7
-workers2 = make_workers_normal(50, 1, 0) #50 workers go for the whole pot
+workers2 = make_workers_normal(50, 0.99999, 0) #50 workers go for nearly the whole pot
 workers = workers1 + workers2
 ranked_pour_sizes5b = simulate_many_games(workers)
 # all the ones who take the whole pot perform better than all others
 
 
 workers1 = make_workers_normal(950, 0.5, 0.1) #950 workers' pours are clustered around 0.5
-workers2 = make_workers_normal(50, 1, 0) #50 workers go for the whole pot
+workers2 = make_workers_normal(50, 0.99999, 0) #50 workers go for nearly the whole pot
 workers = workers1 + workers2
 ranked_pour_sizes5c = simulate_many_games(workers)
 # all the ones who take the whole pot perform better than all others
@@ -227,4 +227,5 @@ ranked_pour_sizes5c = simulate_many_games(workers)
 
 # Even though going for the whole pot doesn't guarantee a win,
 # it's a strategy that generally performs well, especially if 
-# other co-workers also go for the whole pot every time.
+# other co-workers also go for the whole pot every time. I'm 
+# going to submit a pour size of 0.99999999999999999999.
