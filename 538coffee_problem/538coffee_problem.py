@@ -225,8 +225,6 @@ ranked_pour_sizes5c = simulate_many_games(workers)
 
 #CONCLUSION
 
-# Even though going for the whole pot every time doesn't guarantee a win,
-# it's a strategy that generally performs well, especially if other co-workers
-# also go for the whole pot every time.
-
-
+# Even though going for the whole pot doesn't guarantee a win,
+# it's a strategy that generally performs well, especially if 
+# other co-workers also go for the whole pot every time.
