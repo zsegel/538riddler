@@ -209,21 +209,21 @@ ranked_pour_sizes4 = simulate_many_games(workers)
 
 
 workers1 = make_workers_normal(950, 0.9, 0.03) #950 workers' pours are clustered around 0.9
-workers2 = make_workers_normal(50, 1, 0)
+workers2 = make_workers_normal(50, 1, 0) #50 workers go for the whole pot
 workers = workers1 + workers2
 ranked_pour_sizes5a = simulate_many_games(workers)
 # all the ones who take the whole pot perform better than all others
 
 
 workers1 = make_workers_normal(950, 0.7, 0.1) #950 workers' pours are clustered around 0.7
-workers2 = make_workers_normal(50, 1, 0)
+workers2 = make_workers_normal(50, 1, 0) #50 workers go for the whole pot
 workers = workers1 + workers2
 ranked_pour_sizes5b = simulate_many_games(workers)
 # all the ones who take the whole pot perform better than all others
 
 
 workers1 = make_workers_normal(950, 0.5, 0.1) #950 workers' pours are clustered around 0.5
-workers2 = make_workers_normal(50, 1, 0)
+workers2 = make_workers_normal(50, 1, 0) #50 workers go for the whole pot
 workers = workers1 + workers2
 ranked_pour_sizes5c = simulate_many_games(workers)
 # all the ones who take the whole pot perform better than all others
