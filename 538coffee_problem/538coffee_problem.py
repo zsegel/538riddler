@@ -166,10 +166,10 @@ ranked_pour_sizes2 = simulate_many_games(workers)
 # three-fourths of workers are clustered around 0.25, about 
 # one-fourth is clustered around 0.45, and a handful try to 
 # take a gallon every time. These whole-gallon players
-# (represented by vertical spikes around rank ~260 on the 
+# (represented by vertical spikes around rank ~200 on the 
 # accompanying graph) don't win.
 
-workers1 = make_workers_normal(750, 0.25, 0.1)
+workers1 = make_workers_normal(750, 0.25, 0.07)
 workers2 = make_workers_normal(245, 0.45, 0.1)
 workers3 = make_workers_normal(5, 0.99999, 0)
 workers = workers1 + workers2 + workers3
