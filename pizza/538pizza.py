@@ -10,7 +10,8 @@
 
 
 
-# Here's a Monte Carlo approach to the problem:
+# Here's a Monte Carlo approach to calculating the areas.
+# I've assumed that the radius of each pizza is 1.
 
 import numpy as np
 import random
@@ -86,7 +87,19 @@ print "     actual:", actual_one_crescent
 print ""
 
 
-
 plt.plot(crescent_xs, crescent_ys, 'ro')
 plt.plot(football_xs, football_ys, 'bo')
 plt.show()
+
+
+
+# sample output
+'''
+AREA OF TWO FOOTBALLS
+   estimate: 2.4568
+     actual: 2.45673939722
+
+AREA OF ONE CRESCENT
+   estimate: 1.91768
+     actual: 1.91322295498
+'''
