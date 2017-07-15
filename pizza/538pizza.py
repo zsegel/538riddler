@@ -9,6 +9,9 @@
 # Which should you choose to get more pizza: one crescent or two footballs?
 
 
+
+# Here's a Monte Carlo approach to the problem:
+
 import numpy as np
 import random
 import matplotlib.pyplot as plt
