@@ -15,6 +15,11 @@
 
 # Here's a Monte Carlo approach to calculating the areas.
 # I've assumed that the radius of each pizza is 1.
+# One pizza's center is at the origin. the other pizza's
+# center is at (1, 0).
+
+# Equation for pizza at the origin: 1 = x^2 + y^2
+# Equation for pizza centered at (1, 0): 1 = (x-1)^2 + y^2
 
 import numpy as np
 import random
