@@ -12,6 +12,9 @@ import numpy as np
 
 
 def find_angle(a, b):
+    """returns the angle formed by a line drawn between two points
+    on an x-y plane and the x-axis
+    """
     x = b[0] - a[0]
     y = b[1] - a[1]
     if x == 0:
@@ -19,6 +22,7 @@ def find_angle(a, b):
     return np.arctan2(float(y), float(x))
 
 def distance(a, b):
+    """calculates the distance between two points on an x-y plane"""
     return round(np.sqrt((a[1]-b[1])**2 + (a[0]-b[0])**2), 2)  
 
 
