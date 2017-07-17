@@ -18,8 +18,8 @@
 # One pizza's center is at the origin. the other pizza's
 # center is at (1, 0).
 
-# Equation for pizza at the origin: 1 = x^2 + y^2
-# Equation for pizza centered at (1, 0): 1 = (x-1)^2 + y^2
+# Equation for pizza at the origin: 1 = x**2 + y**2
+# Equation for pizza centered at (1, 0): 1 = (x - 1)**2 + y**2
 
 import numpy as np
 import random
@@ -68,7 +68,11 @@ for i in range(points_to_generate):
 # The ratio of the number of points in the football to the 
 # number of total points is approximately equivalent to the
 # ratio of the area of the football to the area of the
-# square (i.e., 4). So the approximate area of one football is:
+# square (which is 4). That is:
+#
+#     pts in football / total pts == area of football / 4
+#
+# So the approximate area of one football is:
 
 approx_one_football = (points_in_football/float(points_to_generate)) * 4
 approx_two_footballs = 2 * approx_one_football
@@ -79,8 +83,8 @@ approx_one_crescent = (points_in_crescent/float(points_to_generate)) * 4
 
 
 # I also calculated the actual areas analytically (see PDF):
-actual_two_footballs = (4 * np.pi - 3 * np.sqrt(3)) / 3
-actual_one_crescent = (2 * np.pi + 3 * np.sqrt(3)) / 6
+actual_two_footballs = (4*np.pi - 3*np.sqrt(3)) / 3.
+actual_one_crescent = (2*np.pi + 3*np.sqrt(3)) / 6.
 
 
 
