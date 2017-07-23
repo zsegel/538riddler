@@ -101,7 +101,6 @@ class SpyEvaluator(object):
                 candidate = new_candidate[:]
             else:
                 targets.append(target)
-        
         return self.min_soldiers_needed(candidate)[0], candidate, targets
         
 
