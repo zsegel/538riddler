@@ -3,7 +3,6 @@ Solution to the problem described here:
 https://fivethirtyeight.com/features/how-much-is-a-spy-worth-in-a-warring-riddler-nation/
 '''
 
-
 import numpy as np
 import itertools
 import random
