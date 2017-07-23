@@ -3,11 +3,11 @@ Solution to the problem described here:
 https://fivethirtyeight.com/features/how-much-is-a-spy-worth-in-a-warring-riddler-nation/
 '''
 
+
 import numpy as np
 import itertools
 import random
 import matplotlib.pyplot as plt
-
 
 class SpyEvaluator(object):
     """A helpful tool for solving the spy problem."""
@@ -105,16 +105,17 @@ class SpyEvaluator(object):
         return self.min_soldiers_needed(candidate)[0], candidate, targets
         
 
-# We can use the SpyEvaluator to find the solution to the problem
+# We can use the SpyEvaluator to find the solution to the problem.
 
 evaluator = SpyEvaluator()
-end, end_dist, targets = evaluator.futz([10, 10, 10, 10, 10, 10, 10, 10, 10, 10], 25000)
+starting_dist = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+end, end_dist, targets = evaluator.futz(starting_dist, 25000)
 
 print 'minimum soldiers needed to beat any distribution:', end
 print 'enemy distribution that is hardest to beat:', end_dist
 plt.plot(targets)
 plt.show()
 
-# This algorithm finds the maximum (56) after about 15,000 rounds of futzing.
+# This algorithm finds the maximum (which is 56) after about 15,000 rounds of futzing.
 # The minimum number of soldiers needed to beat any possible distribution is 56.
 # The enemy distribution that is hardest to beat is [1, 3, 5, 7, 9, 11, 13, 15, 17, 19].
