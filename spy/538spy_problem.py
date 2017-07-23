@@ -68,7 +68,7 @@ class SpyEvaluator(object):
         if an enemy distribution similar to it requires more soldiers to defeat. If it 
         finds one, it starts futzing with THAT distribution, etc.
         
-        Techincally speaking, this is a very clunky form of stochastic optimization. 
+        Technically speaking, this is a very clunky form of stochastic optimization. 
         We're trying to find the maximum of the min_soldiers_needed function.
         
         Args:
