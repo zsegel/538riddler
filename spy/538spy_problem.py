@@ -13,7 +13,7 @@ class SpyEvaluator(object):
     
     def __init__(self):
         """This basically just populates a list called 'ways_to_win' with all possible 
-        ways to win (i.e., score more than 27.5 points) in a head-to-head matchup. This
+        ways to win in a head-to-head matchup (i.e., score more than 27.5 points). This
         list is used by the min_soldiers_needed function below.
         
         Examples: (W, L, L, L, L, L, L, W, W, W) is one way to win; it's worth 28 points.
