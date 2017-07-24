@@ -93,7 +93,7 @@ class SpyEvaluator(object):
         target = self.min_soldiers_needed(candidate)[0]
         targets = [target]
         if anneal == True:
-            anneal_depths = [round((depth - 4)/float(-n) * x) + depth for x in range(n)]
+            anneal_depths = [round((depth-4)/float(-n) * x) + depth for x in range(n)]
         
         for i in range(n):
             new_candidate = candidate[:]
