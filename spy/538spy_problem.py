@@ -5,14 +5,16 @@ https://fivethirtyeight.com/features/how-much-is-a-spy-worth-in-a-warring-riddle
 
 import numpy as np
 import itertools
+import random
 import matplotlib.pyplot as plt
+
 
 class SpyEvaluator(object):
     """A helpful tool for solving the spy problem."""
     
     def __init__(self):
         """This basically just populates a list called 'ways_to_win' with all possible 
-        ways to win in a head-to-head matchup (i.e., score more than 27.5 points). This
+        ways to win (i.e., score more than 27.5 points) in a head-to-head matchup. This
         list is used by the min_soldiers_needed function below.
         
         Examples: (W, L, L, L, L, L, L, W, W, W) is one way to win; it's worth 28 points.
@@ -59,7 +61,7 @@ class SpyEvaluator(object):
                 minimum = soldiers
         return minimum, my_winning_dist
     
-    def futz(self, dist, n=25, depth=5):
+    def futz(self, dist, n=25, depth=5, anneal=False):
         """Our goal is to find an enemy distribution that requires the greatest minimum 
         number of soldiers to defeat.
         
@@ -70,29 +72,47 @@ class SpyEvaluator(object):
         Technically speaking, this is a very clunky form of stochastic optimization. 
         We're trying to find the maximum of the min_soldiers_needed function.
         
+        There's an optional 'anneal' argument. If anneal is True, the function does
+        something that might be called 'simulated annealing'. Basically, it futzes 
+        with the distribution it's testing A LOT at first, and it futzes with it
+        less as the futzing continues; this speeds up the algorithm and makes it less
+        likely to get stuck in a local maximum.
+        
         Args:
-        	dist (list): The distribution you start futzing with (10 ints).
-        	n (int): The number of times you futz.
-        	depth (int greater than 1): The amount of futziness per futz.
-        	
+            dist (list): The distribution you start futzing with (10 ints).
+            n (int): The number of times you futz.
+            depth (int greater than 1): The amount of futziness per futz.
+            anneal: if True, does simulated annealing (you make depth 10 or more)
+        
         Returns:
-        	int: Greatest output value of the min_soldiers_needed function that it found.
-        	list: Distribution of soldiers that produces that output value.
-        	list: A record of the optimization over time.
+            int: Greatest output value of the min_soldiers_needed function that it found.
+            list: Distribution of soldiers that produces that output value.
+            list: A record of the optimization over time.
         """
         candidate = dist
         target = self.min_soldiers_needed(candidate)[0]
         targets = [target]
+        if anneal == True:
+            anneal_depths = [round((depth - 4)/float(-n) * x) + depth for x in range(n)]
         
         for i in range(n):
             new_candidate = candidate[:]
-            for i in range(0, np.random.randint(1, depth)):
-                decrease = np.random.randint(10)
-                while new_candidate[decrease] == 0: 
+            if anneal == True:
+                for j in range(0, np.random.randint(1, anneal_depths[i])):
                     decrease = np.random.randint(10)
-                increase = np.random.randint(10)
-                new_candidate[decrease] -= 1
-                new_candidate[increase] += 1
+                    while new_candidate[decrease] == 0: 
+                        decrease = np.random.randint(10)
+                    increase = np.random.randint(10)
+                    new_candidate[decrease] -= 1
+                    new_candidate[increase] += 1
+            else:
+                for j in range(0, np.random.randint(1, depth)):
+                    decrease = np.random.randint(10)
+                    while new_candidate[decrease] == 0: 
+                        decrease = np.random.randint(10)
+                    increase = np.random.randint(10)
+                    new_candidate[decrease] -= 1
+                    new_candidate[increase] += 1
                 
             if self.min_soldiers_needed(new_candidate)[0] > target:
                 target = self.min_soldiers_needed(new_candidate)[0]
@@ -107,13 +127,23 @@ class SpyEvaluator(object):
 
 evaluator = SpyEvaluator()
 starting_dist = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
-end, end_dist, targets = evaluator.futz(starting_dist, 25000)
+end, end_dist, targets = evaluator.futz(starting_dist, 5000)
+end2, end_dist2, targets2 = evaluator.futz(starting_dist, 5000, depth=12, anneal=True)
 
+print "WITHOUT ANNEALING"
 print 'minimum soldiers needed to beat any distribution:', end
 print 'enemy distribution that is hardest to beat:', end_dist
-plt.plot(targets)
+print ""
+print "WITH ANNEALING"
+print 'minimum soldiers needed to beat any distribution:', end2
+print 'enemy distribution that is hardest to beat:', end_dist2
+
+
+plt.plot(targets, 'bo')
+plt.plot(targets2, 'go')
 plt.show()
 
 # This algorithm finds the maximum (which is 56) after about 15,000 rounds of futzing.
+# (When annealing is on, it finds the maximum after about 2,500 rounds of futzing.)
 # The minimum number of soldiers needed to beat any possible distribution is 56.
 # The enemy distribution that is hardest to beat is [1, 3, 5, 7, 9, 11, 13, 15, 17, 19].
