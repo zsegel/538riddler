@@ -73,10 +73,10 @@ class SpyEvaluator(object):
         We're trying to find the maximum of the min_soldiers_needed function.
         
         There's an optional 'anneal' argument. If anneal is True, the function does
-        something that might be called 'simulated annealing'. Basically, it futzes 
-        with the distribution it's testing A LOT at first, and it futzes with it
-        less as the futzing continues; this speeds up the algorithm and makes it less
-        likely to get stuck in a local maximum.
+        something that I believe counts as 'simulated annealing'. Basically, it futzes 
+        with the distribution it's testing A LOT at first, and that futzing cools down
+        gradually as the futzing continues. The annealing speeds up the algorithm and 
+        reduces the chance that it will get stuck in a local maximum.
         
         Args:
             dist (list): The distribution you start futzing with (10 ints).
