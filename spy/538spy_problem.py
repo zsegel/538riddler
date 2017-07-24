@@ -75,8 +75,8 @@ class SpyEvaluator(object):
         There's an optional 'anneal' argument. If anneal is True, the function does
         something that I believe counts as 'simulated annealing'. Basically, it futzes 
         with the distribution it's testing A LOT at first, and that futzing cools down
-        gradually over time. The annealing speeds up the algorithm and reduces the chance 
-        that it will get stuck in a local maximum.
+        gradually over time. The annealing usually speeds up the algorithm and reduces
+        the chance that it will get stuck in a local maximum.
         
         Args:
             dist (list): The distribution you start futzing with (10 ints).
