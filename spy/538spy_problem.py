@@ -146,6 +146,7 @@ plt.xlabel('Iterations')
 plt.ylabel('Maximum found')
 plt.show()
 
-# This algorithm finds the maximum (which is 56) after about 2,000 rounds of futzing.
+# When annealing is on, this algorithm finds the maximum (which is 56) after
+# about 1,500 rounds of futzing. Without annealing, it usually takes a while longer. 
 # The minimum number of soldiers needed to beat any possible distribution is 56.
 # The enemy distribution that is hardest to beat is [1, 3, 5, 7, 9, 11, 13, 15, 17, 19].
