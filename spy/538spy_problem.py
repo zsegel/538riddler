@@ -139,8 +139,11 @@ print 'minimum soldiers needed to beat any distribution:', end2
 print 'enemy distribution that is hardest to beat:', end_dist2
 
 
-plt.plot(targets, 'bo')
-plt.plot(targets2, 'go')
+plt.plot(targets, 'b')
+plt.plot(targets2, 'g')
+plt.axis([0, 5000, 41, 57])
+plt.xlabel('Iterations')
+plt.ylabel('Maximum found')
 plt.show()
 
 # This algorithm finds the maximum (which is 56) after about 2,000 rounds of futzing.
