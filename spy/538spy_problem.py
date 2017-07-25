@@ -127,8 +127,8 @@ class SpyEvaluator(object):
 
 evaluator = SpyEvaluator()
 starting_dist = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
-end, end_dist, targets = evaluator.futz(starting_dist, 5000)
-end2, end_dist2, targets2 = evaluator.futz(starting_dist, 5000, depth=12, anneal=True)
+end, end_dist, targets = evaluator.futz(starting_dist, 3000)
+end2, end_dist2, targets2 = evaluator.futz(starting_dist, 3000, depth=12, anneal=True)
 
 print "WITHOUT ANNEALING"
 print 'minimum soldiers needed to beat any distribution:', end
@@ -141,7 +141,7 @@ print 'enemy distribution that is hardest to beat:', end_dist2
 
 plt.plot(targets, 'b')
 plt.plot(targets2, 'g')
-plt.axis([0, 5000, 41, 57])
+plt.axis([0, 3000, 41, 57])
 plt.xlabel('Iterations')
 plt.ylabel('Maximum found')
 plt.show()
