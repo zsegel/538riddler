@@ -5,11 +5,7 @@ https://fivethirtyeight.com/features/is-this-bathroom-occupied/
 
 import numpy as np
 
-children = range(30)
-position = 0
-have_held_potato = [0]
 
-        
 def one_game():
     """Simulates one potato-coin game and returns the position of the winner."""
 
@@ -21,6 +17,8 @@ def one_game():
     have_held_potato = [0]
     
     def pass_potato(position):
+        """Flips a coin and passes the potato right or left."""
+        
         if np.random.rand() < .5:
             # pass it to the right
             return (position+1) % 30
@@ -51,5 +49,4 @@ print results
 Sample results:
 [0, 3489, 3479, 3369, 3456, 3386, 3538, 3415, 3434, 3429, 3496, 3414, 3452, 3534, 3411, 
 3345, 3408, 3485, 3419, 3461, 3472, 3425, 3389, 3462, 3484, 3480, 3542, 3414, 3420, 3492]
-
 """
