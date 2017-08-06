@@ -58,3 +58,9 @@ answer = bathroom()
 
 print "The probability that an 'occupied' sign is correct is:", answer[0]
 print "The probability that a 'vacant' sign is correct is:", answer[1]
+
+
+"""
+Occupied signs are correct 5/6 of the time.
+Vacant signs are correct 1/2 of the time.
+"""
