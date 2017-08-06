@@ -49,4 +49,7 @@ print results
 Sample results:
 [0, 3489, 3479, 3369, 3456, 3386, 3538, 3415, 3434, 3429, 3496, 3414, 3452, 3534, 3411, 
 3345, 3408, 3485, 3419, 3461, 3472, 3425, 3389, 3462, 3484, 3480, 3542, 3414, 3420, 3492]
+
+These results indicate that each child has an equal shot at winning the game. (Except for
+child who starts with the potato; they have no chance at winning!)
 """
