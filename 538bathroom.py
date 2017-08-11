@@ -52,7 +52,7 @@ def bathroom(p_consc=1/3., sims=1000000):
             sign = "occupied"
     
     
-    return round(occupied_true/float(sims), 3), round(vacant_true/float(sims), 3)
+    return round(occupied_true/float(occupied_true + occupied_false), 3), round(vacant_true/float(vacant_true + vacant_false), 3)
     
 answer = bathroom()
 
