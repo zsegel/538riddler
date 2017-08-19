@@ -19,10 +19,14 @@ twos = sequence.count(2)
 threes = len(sequence) - twos
 
 # And calculate the ratio of threes to twos:
-print float(threes) / twos
+print float(threes) / twos 
+
+# The ratio of twos to threes is 2.7320509
+# Note that sqrt(3) = 1.7320508075688772
+
 
 '''
-FINDINGS:
+CONCLUSION:
 As the length of the sequence approaches infinity, the ratio of threes to twos in the 
 sequence approaches sqrt(3) + 1. There might be an interesting reason why this is the 
 case, but I don't know what that reason is.
