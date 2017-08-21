@@ -28,5 +28,5 @@ print float(threes) / twos
 '''
 CONCLUSION:
 As the length of the sequence approaches infinity, the ratio of threes to twos in the 
-sequence approaches sqrt(3) + 1. There might be an interesting reason why this is!
+sequence approaches sqrt(3) + 1. Wowza.
 '''
