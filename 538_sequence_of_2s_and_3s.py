@@ -24,7 +24,6 @@ print float(threes) / twos
 # The ratio of twos to threes is 2.7320509
 # Note that sqrt(3) = 1.7320508075688772
 
-
 '''
 CONCLUSION:
 As the length of the sequence approaches infinity, the ratio of threes to twos in the 
