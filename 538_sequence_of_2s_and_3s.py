@@ -6,7 +6,7 @@ https://fivethirtyeight.com/features/can-you-unravel-these-number-strings/
 # We can use the first four entries in the sequence to generate as many more as we please.
 sequence = [3, 3, 3, 2]
 
-# Let's apply the sequence-generating rules 10,000,000 times:
+# Let's apply the sequence-generating rule 10,000,000 times:
 iterations = 10000000
 for i in range(1, iterations):
     if sequence[i] == 3:
