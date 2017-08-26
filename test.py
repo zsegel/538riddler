@@ -15,6 +15,21 @@ terms, find the value of the denominator.
 '''
 import numpy as np
 
-nums = [n for n in range(11, 100) if '0' not in str(n)]
+numbers = [n for n in range(11, 100) if '0' not in str(n)]
 
-candidates = [(i, j) for i in nums for j in nums if i < j]
+candidates = [(i, j) for i in numbers for j in numbers if i < j]
+winners = []
+
+for c in candidates:
+  num, den = c[0], c[1]
+  target = float(num) / den
+  
+  for char in str(num):
+    if char in str(den):
+      new_num = int(str(num).replace(char, ''))
+      new_den = int(str(den).replace(char, ''))
+      
+      if float(new_num) / new_den == target:
+        if c not in winners:
+          winners.append(c)
+  
