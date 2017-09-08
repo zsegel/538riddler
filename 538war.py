@@ -40,7 +40,6 @@ def sim_one_game():
             cards.extend(war)
             np.random.shuffle(cards)
             B.extend(cards[:])
-
     else:
         return bool(len(B))
 
