@@ -50,3 +50,9 @@ for i in range(sims):
     if sim_one_game():
         wins += 1
 print wins/float(sims)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+#                                                                           #
+#   ANSWER: the probability that the non-ace player wins is about 19.3%     #
+#                                                                           #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
