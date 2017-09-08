@@ -44,7 +44,7 @@ def sim_one_game():
         return bool(len(B))
 
 # Monte Carlo approximation of the probability that the non-ace player wins
-sims = 1000000
+sims = 100000
 wins = 0
 for i in range(sims):
     if sim_one_game():
