@@ -51,8 +51,8 @@ for i in range(sims):
         wins += 1
 print wins/float(sims)
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-#                                                                           #
-#   ANSWER: the probability that the non-ace player wins is about 19.3%     #
-#                                                                           #
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#                                                                             #
+#   ANSWER: probability the non-ace player wins is a little more than  19%    #
+#                                                                             #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
