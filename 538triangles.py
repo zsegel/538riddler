@@ -2,9 +2,8 @@
 Solution to the Riddler Classic problem here: 
 https://fivethirtyeight.com/features/will-you-be-a-ghostbuster-or-a-world-destroyer/
 
-These problems are pretty straightforward once we realize the following:
-
-Given stick lengths a, b, c, where a < b < c:
+These problems are pretty straightforward once we realize that, 
+given stick lengths {a, b, c}, where a < b < c:
 	I.  a, b, c can form a triangle iff a+b > c
 	II. a, b, c can form an acute triangle iff a**2 + b**2 > c**2
 	
@@ -13,8 +12,7 @@ We can use Monte Carlo simulations to get approximate answers to the questions:
 	2. 25.00%
 	3.  7.95%
 	4. 21.46%
-
-And our work here is DONE. Code below."""
+And our work here is DONE. Code below!"""
 
 import numpy as np
 sims = 1000000
