@@ -12,7 +12,7 @@ We can use Monte Carlo simulations to get approximate answers to the questions:
 	2. 25.00%
 	3.  7.95%
 	4. 21.46%
-And our work here is DONE. Code below!"""
+"""
 
 import numpy as np
 sims = 1000000
