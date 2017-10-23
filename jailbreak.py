@@ -1,4 +1,3 @@
-
 import numpy as np
 
 class Prison(object):
@@ -88,6 +87,7 @@ class Prisoner(object):
                 return 3
 
 
+# SIMULATING THE JAILBREAK GAME REPEATEDLY
 def sim_one():
     # create one counter
     prisoners = [Prisoner(is_counter=True)]
@@ -108,4 +108,6 @@ def sim_many(n):
         results.append(sim_one())
     return results
     
-
+# results = sim_many(10000))
+# np.mean(results) = 22181
+# np.std(results) == 2168
