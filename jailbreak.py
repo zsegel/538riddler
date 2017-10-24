@@ -40,7 +40,6 @@ Here's a strategy that will guarantee the prisoners' release:
     
     2. Everyone besides the counter flips the levers like this:
             STATE 0: always flip to STATE 1
-            
             STATE 1:
                 -only flip to STATE 3 if:
                     i.  they have never flipped STATE 1 to STATE 3
