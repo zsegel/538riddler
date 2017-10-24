@@ -88,7 +88,8 @@ STATE 3 and STATE 2. Think of these as two "modes" that the system can be in:
                MODE B 
 
 When the system is in MODE A, it's waiting for a new prisoner to shift it into MODE B, and when 
-it's in MODE B, it's waiting for the counter to shift it back to MODE A.
+it's in MODE B, it's waiting for the counter to shift it back to MODE A (something only the counter
+can do).
 
 Each prisoner only shifts the system from MODE A to MODE B once, so the counter counts the number 
 of times a non-counter has shifted the system into that mode. When the counter's count reaches 99, 
