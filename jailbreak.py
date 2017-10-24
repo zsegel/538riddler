@@ -102,7 +102,8 @@ add 1 to their count?)
 
 Because the non-counters aren't allowed to shift the system to MODE B until they've already seen it in
 MODE B, the counter can be sure that the first mode they see the system in is the mode it started in.
-(If it starts in MODE A, only the counter is allowed to shift it into MODE B.)
+(If it starts in MODE A, only the counter is allowed to shift it into MODE B, so it will stay in MODE A
+until the counter is brought to cell zero for the first time.)
 
 The counter always shifts the system from MODE A to MODE B when they can for simplicity's sake. The
 strategy would still work if they only shifted it from MODE A to MODE B some of the time.
