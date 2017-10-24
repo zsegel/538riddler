@@ -14,6 +14,8 @@ https://fivethirtyeight.com/features/can-you-please-the-oracle-can-you-escape-th
     Knowing these rules, what strategy can the prisoners devise beforehand that will guarantee their release? 
     How many trips to Cell 0 will it take on average before they are released?'
 
+I. A WINNING STRATEGY
+
 Ok. There are four states the levers can be in: (down, down), (down, up), (up, down), and (up, up).
 
 Let's give these states names:
@@ -60,10 +62,15 @@ Here's a strategy that will guarantee the prisoners' release:
                 the last time they flipped STATE 2 to STATE 0.
     
     5. When the counter's count reaches 99, they declare that all prisoners have visited cell 0.
+    
+    
+On average, this strategy requires the prisoners to make a little less than 22,200 trips to cell 
+zero (collectively) before they're released.
+    
+   
             
             
-            
-Why does this strategy work?
+II. WHY DOES THE STRATEGY WORK?
 
                STATE 1
               //     \
@@ -202,6 +209,6 @@ def sim_many(n):
         results.append(sim_one())
     return results
     
-# results = sim_many(10000))
-# np.mean(results) = 22181
-# np.std(results) == 2168
+# results = sim_many(80000))
+# np.mean(results) = 22182.855862500001
+# np.std(results) == 2158.3301431052851
