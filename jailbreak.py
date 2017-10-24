@@ -209,6 +209,6 @@ def sim_many(n):
         results.append(sim_one())
     return results
     
-# results = sim_many(80000))
+# results = sim_many(80000)
 # np.mean(results) = 22182.855862500001
 # np.std(results) == 2158.3301431052851
