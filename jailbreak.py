@@ -40,10 +40,10 @@ Here's a strategy that will guarantee the prisoners' release:
             STATE 0: always flip to STATE 1
             
             STATE 1:
-                - only flip to STATE 3 if:
+                -only flip to STATE 3 if:
                     i.  they have never flipped STATE 1 to STATE 3
                     ii. they have seen the levers in STATE 2 or STATE 3
-                - otherwise, flip STATE 1 to STATE 0
+                -otherwise, flip STATE 1 to STATE 0
                 
             STATE 2: always flip to STATE 3
             STATE 3: always flip to STATE 2
@@ -60,6 +60,7 @@ Here's a strategy that will guarantee the prisoners' release:
                 the last time they flipped STATE 2 to STATE 0.
     
     5. When the counter's count reaches 99, they declare that all prisoners have visited cell 0.
+            
             
             
 Why does this strategy work?
@@ -88,11 +89,18 @@ they can be sure that all prisoners have been to cell zero.
 
 Because the initial state of the levers is unknown, the non-counters aren't allowed to shift the
 system from MODE A to MODE B until they've already seen it in MODE B. Suppose they didn't do this. 
-The first 
+The first time the counter visits cell zero, if the system is in MODE B, it'll be unclear which mode
+it started in--did it start in MODE A and get shifted to MODE B by another prisoner, or did it
+start in MODE B? This is a problem. When the counter shifts the system back into MODE A, should they 
+add 1 to their count?
 
+Because the non-counters aren't allowed to shift the system to MODE B until they've already seen it in
+MODE B, the counter can be sure that the first mode they see the system in is the mode it started in.
+(If it starts in MODE A, only the counter is allowed to shift it into MODE B.)
 
+The counter always shifts the system from MODE A to MODE B when they can for simplicity's sake. The
+strategy would still work if they only shifted it from MODE A to MODE B some of the time.
 """
-
 
 import numpy as np
 
