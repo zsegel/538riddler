@@ -38,7 +38,7 @@ Here's a strategy that will guarantee the prisoners' release:
     1. The prisoners choose one person to be the "counter." The counter is the only one who can declare
        that all the prisoners have visited cell zero.
     
-    2. Everyone besides the counter flips the levers as follows:
+    2. Everyone besides the counter flips the levers like this:
             STATE 0: always flip to STATE 1
             
             STATE 1:
