@@ -64,8 +64,8 @@ Here's a strategy that will guarantee the prisoners' release:
     5. When the counter's count reaches 99, they declare that all prisoners have visited cell 0.
     
     
-On average, this strategy requires the prisoners to make a little less than 22,200 trips to cell 
-zero (collectively) before they're released.
+On average, this strategy requires the prisoners to make about 22,180 trips to cell zero before 
+they're released.
     
    
             
