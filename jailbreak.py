@@ -97,8 +97,8 @@ Because the initial state of the levers is unknown, the non-counters aren't allo
 system from MODE A to MODE B until they've already seen it in MODE B. Suppose they didn't do this. 
 The first time the counter visits cell zero, if the system is in MODE B, it'll be unclear which mode
 it started in--did it start in MODE A and get shifted to MODE B by another prisoner, or did it
-start in MODE B? This is a problem. When the counter shifts the system back into MODE A, should they 
-add 1 to their count?
+start in MODE B? This is a problem. (When the counter shifts the system back into MODE A, should they 
+add 1 to their count?)
 
 Because the non-counters aren't allowed to shift the system to MODE B until they've already seen it in
 MODE B, the counter can be sure that the first mode they see the system in is the mode it started in.
