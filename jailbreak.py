@@ -79,21 +79,20 @@ II. WHY DOES THE STRATEGY WORK?
                STATE 2
               
 Most of the time, the levers are bouncing back and forth between either STATE 0 and STATE 1 or
-STATE 3 and STATE 2. Think of these as two "modes" that the system can be in:
+STATE 3 and STATE 2. Think of these as two "modes" that the system can be in, A and B:
 
-               MODE A
-              //     \
-         MODE A     MODE B
-               \    //
-               MODE B 
+               MODE A                                       
+              //     \                                         -----each non-counter, once---->
+         MODE A     MODE B            or even           MODE A                                  MODE B                         
+               \    //                                         <-------only the counter--------
+               MODE B                                                   
 
-When the system is in MODE A, it's waiting for a new prisoner to shift it into MODE B, and when 
-it's in MODE B, it's waiting for the counter to shift it back to MODE A (something only the counter
-can do).
+When the system is in MODE A, it's waiting for a new prisoner to shift it into MODE B (something each
+non-counter does only once), and when it's in MODE B, it's waiting for the counter to shift it back to 
+MODE A (something only the counter can do).
 
-Each prisoner only shifts the system from MODE A to MODE B once, so the counter counts the number 
-of times a non-counter has shifted the system into that mode. When the counter's count reaches 99, 
-they can be sure that all prisoners have been to cell zero.
+The counter keeps track of the number of times the system has been shifted into MODE B (by someone 
+besides the counter, of course). When the count reaches 99, all prisoners must have been to cell zero.
 
 Because the initial state of the levers is unknown, the non-counters aren't allowed to shift the
 system from MODE A to MODE B until they've already seen it in MODE B. Suppose they didn't do this. 
