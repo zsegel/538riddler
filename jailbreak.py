@@ -25,7 +25,7 @@ Let's give these states names:
     (up, up)   ----> STATE 3
     
 Note that it is impossible for a single flip to move the levers from STATE 0 to STATE 3 (and vice versa), or 
-from STATE 1 to STATE 2 (and vice versa). The state transitions connect to each other like this:
+from STATE 1 to STATE 2 (and vice versa). The possible state transitions look like this.
 
                STATE 1
                /     \
