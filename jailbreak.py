@@ -91,7 +91,8 @@ non-counter does only once), and when it's in MODE B, it's waiting for the count
 MODE A (something only the counter can do).
 
 The counter keeps track of the number of times the system has been shifted into MODE B (by someone 
-besides the counter, of course). When the count reaches 99, all prisoners must have been to cell zero.
+besides the counter, of course). Each new (non-trivial) shift into MODE B must have been done by a 
+different prisoner. When the count reaches 99, all prisoners must have been to cell zero.
 
 Because the initial state of the levers is unknown, the non-counters aren't allowed to shift the
 system from MODE A to MODE B until they've already seen it in MODE B. Suppose they didn't do this. 
