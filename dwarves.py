@@ -15,9 +15,7 @@ own bed if it is not occupied, and otherwise chooses another unoccupied bed at r
     Q: What is the expected number of dwarfs who do not sleep in their own beds?
     A: About 4.142
 """
-
 import numpy as np
-
 
 def sim_one():
     beds = np.zeros(7)
@@ -33,7 +31,6 @@ def sim_one():
             beds[np.random.choice(empty_beds)] = d
     
     return own_bed_count, beds[6] == 7
-
 
 def sim_many(n):
     own_bed_counts = []
