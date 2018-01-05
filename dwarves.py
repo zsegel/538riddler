@@ -21,7 +21,6 @@ def sim_one():
     beds = np.zeros(7)
     beds[np.random.randint(1, 7)] = 1  # put the first dwarf in someone else's bed
     own_bed_count = 0
-    
     for d in range(2, 8):
         if not beds[d-1]:  # each dwarf sleeps in their own bed if its unoccupied
             beds[d-1] = d
@@ -29,18 +28,15 @@ def sim_one():
         else:
             empty_beds = np.where(beds == 0)[0]
             beds[np.random.choice(empty_beds)] = d
-    
     return own_bed_count, beds[6] == 7
 
 def sim_many(n):
     own_bed_counts = []
     oldest_in_own_bed_count = 0
-    
     for i in range(n):
         own_bed, oldest_in_own_bed = sim_one()
         own_bed_counts.append(own_bed)
         oldest_in_own_bed_count += oldest_in_own_bed
-        
     return oldest_in_own_bed_count/float(n), np.mean(own_bed_counts)
     
     
