@@ -39,5 +39,4 @@ def sim_many(n):
         oldest_in_own_bed_count += oldest_in_own_bed
     return oldest_in_own_bed_count/float(n), np.mean(own_bed_counts)
     
-    
-print sim_many(500000)
+    print sim_many(500000)
