@@ -22,7 +22,7 @@ def sim_one():
     beds[np.random.randint(1, 7)] = 1  # put the first dwarf in someone else's bed
     own_bed_count = 0
     for d in range(2, 8):
-        if not beds[d-1]:  # each dwarf sleeps in their own bed if its unoccupied
+        if not beds[d-1]:  # each dwarf sleeps in his own bed if it's unoccupied
             beds[d-1] = d
             own_bed_count += 1
         else:
