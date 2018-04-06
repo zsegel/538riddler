@@ -1,9 +1,16 @@
+"""
+While killing some time at your desk one afternoon, you fire up a new game of 
+Solitaire (also called Klondike, and specifically the version where you deal out 
+three cards from the deck at a time). But your boredom quickly turns to rage because 
+your game is unplayable — you can flip through your deck, but you never have any 
+legal moves! What are the odds?
+"""
+
+
 import numpy as np
 
-class Simulator(object):
-    
+class Simulator(object):    
     def __init__(self):
-        
         self.d = {         # directed graph linking each card to
             2 : [29, 42],  # the cards that it can be placed on
             3 : [30, 43],
@@ -57,6 +64,7 @@ class Simulator(object):
             52 : [],
         }
 
+        
     def sim_one(self):
         """
         Simulates the start of one solitaire game.
@@ -81,10 +89,15 @@ class Simulator(object):
         
         return True
     
-    def sim_many(self, n=10000):
+    
+    def sim_many(self, n=1000000):
         """Monte Carlo simulation"""
         
         count = 0
         for i in range(n):
             count += self.sim_one()
         return count/float(n)
+
+    
+simulator = Simulator.()
+print simulator.sim_many()
