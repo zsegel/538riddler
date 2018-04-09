@@ -10,17 +10,17 @@ descriptively, how many teams weren’t transitive national champions?
 """
 
 
-#construct a directed graph with edges from each team to all the teams they lost to
+# construct a directed graph with edges from each team to all the teams they lost to
 graph = {}
 
 f = open('ncaa.txt')
 text = f.read().splitlines()
 
 for line in text:
-    line = line.replace('@', '') #remove @ symbols
-    line = line.split()[1:] #remove first column (the date of the game)
+    line = line.replace('@', '') # remove @ symbols
+    line = line.split()[1:] # remove first column (the date of the game)
     
-    #extract team names and score from text and update graph
+    # extract team names and score from text and update graph
     team1 = ""
     team1_pts = 0
     team2 = ""
@@ -53,7 +53,7 @@ for line in text:
         graph[team2].append(team1)
         
 
-#use depth-first search to find all teams that beat Villanova *transitively*
+# use depth-first search to find all teams that beat Villanova *transitively*
 def dfs(graph, starting_node):
     """Returns the set of all nodes the starting_node can reach."""
     
@@ -72,3 +72,6 @@ all_teams = graph.keys()
 transitive_champs = dfs(graph, 'Villanova')
 
 print len(all_teams) - len(transitive_champs)
+
+# Only about 13% of teams (177 out of 1362) do not count as transitive national champions.
+
