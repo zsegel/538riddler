@@ -18,9 +18,9 @@ text = f.read().splitlines()
 
 for line in text:
     line = line.replace('@', '') # remove @ symbols
-    line = line.split()[1:] # remove first column (the date of the game)
+    line = line.split()[1:] # split lines by whitespace and remove first column (the date of the game)
     
-    # extract team names and score from text and update graph
+    # extract relevant data from text and update graph
     team1 = ""
     team1_pts = 0
     team2 = ""
