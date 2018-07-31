@@ -1,6 +1,24 @@
-import numpy as np
-
 """
+Solution to July 27, 2018 Riddler Classic
+(https://fivethirtyeight.com/features/the-perfect-doodle-puzzle-to-keep-you-busy-during-boring-meetings/)
+
+        Start with an empty 5-by-5 grid of squares, and choose any square 
+        you want as your starting square. The rules for moving through the 
+        grid from there are strict:
+
+        1. You may move exactly three cells horizontally or vertically, 
+           or you may move exactly two cells diagonally.
+        2. You are not allowed to visit any cell you already visited.
+        3. You are not allowed to step outside the grid.
+
+        You win if you are able to visit all 25 cells.
+
+        Is it possible to win? If so, how? If not, what are the largest 
+        and smallest numbers of squares you can legally visit?
+
+SOLUTION: There are many ways to win.
+Let's represent the 5 by 5 grid like this:
+
 11 | 12 | 13 | 14 | 15
 ----------------------
 21 | 22 | 23 | 24 | 25
@@ -10,6 +28,9 @@ import numpy as np
 41 | 42 | 43 | 44 | 45
 ----------------------
 51 | 52 | 53 | 54 | 55
+
+In the graph below, there are edges between each cell and every cell that's one move away from it.
+The code just searches the graph randomly until it finds a simple path through the graph that's 25 cells long.
 """
 
 graph = {
@@ -40,11 +61,11 @@ graph = {
     55 : [52, 25, 33]
 }
 
+import numpy as np
+
 def random_path(graph):
-    nodes = graph.keys()
     path = []
-    
-    current_node = np.random.choice(nodes)
+    current_node = np.random.choice(graph.keys())    # choose a starting node
     path.append(current_node)
     
     while [node for node in graph[current_node] if node not in path]:
@@ -63,3 +84,18 @@ def monte_carlo_path(graph, N):
     return len(longest_path), longest_path
 
 print monte_carlo_path(graph, 5000)
+
+
+"""
+There are lots of solutions to this puzzle, e.g.:
+
+[31, 53, 23, 41, 44, 22, 25, 43, 13, 35, 32, 14, 11, 33, 55, 52, 34, 12, 15, 45, 42, 24, 54, 51, 21]
+[14, 44, 22, 52, 34, 31, 13, 43, 25, 55, 33, 11, 41, 23, 53, 35, 32, 54, 51, 21, 24, 42, 45, 15, 12]
+[31, 34, 12, 42, 24, 21, 51, 54, 32, 14, 11, 41, 44, 22, 52, 55, 25, 43, 13, 35, 53, 23, 45, 15, 33]
+[44, 22, 25, 43, 21, 24, 42, 45, 15, 12, 34, 52, 55, 33, 51, 54, 32, 14, 11, 41, 23, 53, 31, 13, 35]
+[25, 22, 44, 14, 32, 35, 53, 23, 45, 15, 12, 42, 24, 54, 51, 21, 43, 13, 31, 34, 52, 55, 33, 11, 41]
+
+etc.
+
+zs
+"""
