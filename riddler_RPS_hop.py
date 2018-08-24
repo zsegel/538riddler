@@ -1,8 +1,7 @@
 import numpy as np
 
 """
-Solution to August 24th Riddler 
-(fivethirtyeight.com/features/how-many-hoops-will-kids-jump-through-to-play-rock-paper-scissors/)
+Solution to August 24th Riddler (fivethirtyeight.com/features/how-many-hoops-will-kids-jump-through-to-play-rock-paper-scissors/)
 
     Let’s call this game rock-paper-scissors-hop. Here is an idealized list of its rules:
 
@@ -25,7 +24,6 @@ Solution to August 24th Riddler
     If you put down eight hoops, how long on average will the game last? 
     How many hoops should you put down if you want the game to last for 
     the entire 30-minute period, on average?
-
 
 
 The code below uses a Monte Carlo simulation to estimate the expected duration
@@ -70,6 +68,8 @@ We can do a little math and write E[N] as a function of N:
 So...
 A game with 8 hoops lasts 58.5 seconds on average.
 And game with 57 hoops would last a little more than 30 minutes on average.
+
+Here's the code:
 """
 
 def sim_one(N):
