@@ -62,9 +62,19 @@ print("slope:", model.coef_)
 print("intercept", model.intercept_)
 
 """
-Answer: for five lanes, the expected number of swimmers is about 2.466...
+Answer: for five lanes, the expected number of swimmers is 2.466666... 
+- There's a (2/5) chance that the first swimmer chooses lane 2 or 4, which each guarantee 
+  that there will only be two swimmers. 
+- There's a (1/5) chance that the first swimmer chooses lane 3, which guarantees that there
+  will be three swimmers.
+- There's a (2/5) chance that the first swimmer chooses lane 1 or 5. After that, there's a 
+  (2/3) chance that the next swimmer chooses either lane three or the other lane at the end,
+  in which case there will be three swimmers, and there is a (1/3) chance that the next swimmer
+  chooses the lane that's next to the lane at the end, in which case there will be two swimmers.
+- So the overall expected number of swimmers is: 
+       (2/5)*2 + (1/5)*3 + (2/5)(2/3)*3 + (2/5)(1/3)*2 = (37/15) = 2.466666...
 
 Extra credit: There's a linear relationship between the number of lanes, N,  and the expected
-number of swimmers. Roughly, xxpected number of swimmers = 0.432*N + 0.3
+number of swimmers. Roughly, expected number of swimmers = 0.432*N + 0.3
 
 """
